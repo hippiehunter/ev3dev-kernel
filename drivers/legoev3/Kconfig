@@ -96,14 +96,14 @@ config LEGOEV3_MS_LIGHT_ARRAY
 	  Select Y to enable the driver for the Mindsensors Light Sensor Array.
 
 config LEGOEV3_UART_SENSORS
-	tristate "EV3 UART sensor suppport"
+	tristate "EV3 UART sensor support"
 	default y
 	depends on LEGOEV3_INPUT_PORT
 	help
 	  Select Y to enable support for EV3 UART sensors.
 
 config LEGOEV3_MOTORS
-	tristate "EV3 motor suppport"
+	tristate "EV3 motor support"
 	default y
 	depends on LEGOEV3_OUTPUT_PORT
 	help
@@ -111,11 +111,19 @@ config LEGOEV3_MOTORS
 	  class interface for LEGO EV3 and NXT compatible motors.
 
 config LEGOEV3_TACHO_MOTORS
-	tristate "EV3 tacho motor suppport"
+	tristate "EV3 tacho motor support"
 	default y
 	depends on LEGOEV3_MOTORS
 	help
 	  Select Y to enable support for LEGO EV3 and NXT tacho motors.
+
+
+config HITECHNIC_I2C_MOTOR_MULTIPLEXER
+	tristate "HiTechnic motor controller support"
+	default y
+	depends on LEGOEV3_INPUT_PORT
+	help
+	  Select Y to enable support for HiTechnic motor controllers.
 
 
 endif #LEGOEV3_DRIVERS
